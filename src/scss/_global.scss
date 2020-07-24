@@ -17,15 +17,69 @@ body {
 
 body {
   font-family: 'Montserrat', 'Arial', sans-serif;
+  line-height: 1.75;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
+  color: $text;
   text-decoration: none;
+
+  &:visited {
+    color: $main;
+  }
 }
 
 button:focus,
-input:focus {
+input:focus,
+a:focus {
   outline: transparent;
+}
+
+h1,
+.like-h1 {
+  font-weight: bold;
+  font-size: 110px;
+  line-height: 134px;
+  margin: 0;
+}
+
+h2,
+.like-h2 {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 73px;
+  text-transform: uppercase;
+  color: $main;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: attr(data-shadow);
+    font-size: 1em;
+    z-index: 1;
+    position: relative;
+  }
+
+  &::after {
+    content: attr(data-shadow);
+    position: absolute;
+    color: $grey;
+    font-size: 1.83em;
+    left: 10px;
+    bottom: 10px;
+    z-index: 0;
+  }
+}
+
+h3,
+.like-h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .container {

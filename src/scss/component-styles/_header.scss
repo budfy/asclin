@@ -1,1 +1,85 @@
-.header {}
+.header {
+  @include bg;
+  background-position: center top;
+  background-image: linear-gradient(to top, rgba(19, 33, 59, 0.65), rgba(19, 33, 59, 0.65)),
+    url(../images/header-bg.jpg);
+  padding: 25px 0 75px;
+
+
+
+  &__icon-list {
+
+    .icon-list__item {
+
+      .icon-list__link:focus {
+        outline: 1px solid #ffffff;
+      }
+
+      [href*=facebook],
+      [href*=instagram],
+      [href*=youtube] {
+        height: 26px;
+        width: 26px;
+
+        &:focus {
+          outline: 1px solid #ffffff;
+        }
+      }
+
+      &--lk {
+        height: 36px;
+        width: 100px;
+      }
+    }
+
+    .icon-list__img {
+      fill: #ffffff;
+      height: 100%;
+      object-fit: contain;
+      transition: all 0.26s;
+    }
+
+    .icon-list__link:hover .icon-list__img {
+      fill: $grey-bg-2;
+    }
+
+    .icon-list__item+.icon-list__item {
+      margin-left: 21px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 103px;
+    padding-left: 36px;
+  }
+
+  &__box {
+    align-items: stretch;
+  }
+
+  &__title {
+    color: #ffffff;
+    text-align: right;
+    max-width: 555px;
+    padding-right: 32px;
+    border-right: 1px solid #ffffff;
+  }
+
+  &__title-sup {
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  &__title-sub {
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    display: block;
+    width: 100%;
+  }
+
+  &__menu .menu__list {
+    margin: 0 0 0 22px;
+  }
+}

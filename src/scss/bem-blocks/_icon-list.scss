@@ -1,0 +1,11 @@
+.icon-list {
+  list-style: none;
+
+  &__item {
+    font-size: 0;
+  }
+
+  &__link {
+    display: block;
+  }
+}

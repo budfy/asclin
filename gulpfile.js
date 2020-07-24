@@ -78,7 +78,7 @@ gulp.task("scss", function () {
 				},
 			}),
 		)
-		.pipe(sourcemaps.write()) //записываем карту в итоговый файл
+		.pipe(sourcemaps.write("sourcemaps/")) //записываем карту в итоговый файл
 		.pipe(gulp.dest("build/css")) //кладём итоговый файл в директорию build/css
 		.pipe(
 			browserSync.reload({
@@ -99,6 +99,7 @@ gulp.task("style", function () {
 		])
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
 		.pipe(cssmin()) //минифицируем полученный файл
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/css")) //кидаем готовый файл в директорию
 		.pipe(size());
 });
@@ -114,6 +115,7 @@ gulp.task("script", function () {
 		.pipe(babel())
 		.pipe(concat("libs.min.js"))
 		.pipe(uglify())
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/js"))
 		.pipe(size());
 });
@@ -155,6 +157,7 @@ gulp.task("html", function () {
 			}),
 		)
 		// .pipe(webphtml())
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/"))
 		.pipe(size())
 		.pipe(

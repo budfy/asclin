@@ -1,0 +1,24 @@
+:root {
+  --main-color: #10182D;
+  --text: #11172D;
+  --grey: #D4D5D9;
+  --grey-bg: #ecedef;
+  --grey-bg-2: #DCDDE1;
+}
+
+// $main: var(--main-color);
+// $text: var(--text);
+// $grey: var(--grey);
+// $grey-bg: var(--grey-bg);
+// $grey-bg-2: var(--grey-bg-2);
+$main: #10182D;
+$text: #11172D;
+$grey: #D4D5D9;
+$grey-bg: #ecedef;
+$grey-bg-2: #DCDDE1;
+
+@mixin bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

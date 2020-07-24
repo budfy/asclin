@@ -1,19 +1,33 @@
-@import 'vars';
+//STYLES-SECTION: local fonts
 @import 'fonts';
+//!STYLES-SECTION: local fonts
+
+//STYLES-SECTION: global and BEM-blocks
+
+//STYLES-SECTION: global styles
+@import 'vars';
 @import 'global';
+//!STYLES-SECTION: global styles
 
-//-----------------------------------------------------------------------------------------------------------
-//
-//                                                    START CODE
-//
-//-----------------------------------------------------------------------------------------------------------
+//STYLES-SECTION: BEM-blocks
+@import 'bem-blocks/logo';
+@import 'bem-blocks/icon-list';
+@import 'bem-blocks/menu';
+@import 'bem-blocks/white-btn';
+//!STYLES-SECTION: BEM-blocks
+
+//!STYLES-SECTION: global and BEM-blocks
 
 
 
-//-----------------------------------------------------------------------------------------------------------
-//
-//                                                    END CODE
-//
-//-----------------------------------------------------------------------------------------------------------
+//STYLES-SECTION: sections
+@import 'component-styles/_header';
+@import 'component-styles/contact-form';
+@import 'component-styles/footer';
+//!STYLES-SECTION: sections
 
+
+
+//STYLES-SECTION: media queries
 @import 'media';
+//!STYLES-SECTION: media queries

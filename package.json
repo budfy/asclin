@@ -1,10 +1,9 @@
 {
-  "name": "Easy-webdev-startpack",
-  "version": "1.3.0",
-  "description": "HTML5+CSS3 template for easy start website project'",
+  "name": "asclin",
+  "version": "1",
+  "description": "html/css/js website markup",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp-webpcss": "^1.1.1",
     "jquery": "^3.4.1",
     "mkdir": "0.0.2",
     "normalize.css": "^8.0.1"
@@ -55,7 +54,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/budfy/Easy-webdev-startpack.git",
+  "repository": "https://github.com/budfy/asclin.git",
   "author": "Roman Serdyuk",
   "license": "ISC",
   "bugs": {

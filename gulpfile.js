@@ -16,8 +16,7 @@ let gulp = require("gulp"),
 	recompress = require("imagemin-jpeg-recompress"), //тоже пережимает, но лучше. Плагин для плагина
 	pngquant = require("imagemin-pngquant"),
 	webp = require('gulp-webp'),
-	webphtml = require('gulp-webp-html'),
-	webpcss = require("gulp-webpcss"),
+	// webphtml = require('gulp-webp-html'),
 	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
@@ -79,7 +78,6 @@ gulp.task("scss", function () {
 				},
 			}),
 		)
-		.pipe(webpcss())
 		.pipe(sourcemaps.write()) //записываем карту в итоговый файл
 		.pipe(gulp.dest("build/css")) //кладём итоговый файл в директорию build/css
 		.pipe(
@@ -156,7 +154,7 @@ gulp.task("html", function () {
 				basepath: "@file",
 			}),
 		)
-		.pipe(webphtml())
+		// .pipe(webphtml())
 		.pipe(gulp.dest("build/"))
 		.pipe(size())
 		.pipe(

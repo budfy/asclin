@@ -26,6 +26,9 @@ let gulp = require("gulp"),
 	size = require("gulp-filesize"), //выводит в консоль размер файлов до и после их сжатия, чем создаёт чувство глубокого морального удовлетворения, особенно при минификации картинок
 	rsync = require("gulp-rsync"), //заливает файлы проекта на хостинг по ftp с заданными параметрами
 	sourcemaps = require("gulp-sourcemaps"); //рисует карту слитого воедино файла, чтобы было понятно, что из какого файла бралось
+const {
+	dest
+} = require("gulp");
 
 gulp.task("scss", function () {
 	//делаем из своего scss-кода css для браузера
@@ -291,14 +294,14 @@ gulp.task("deleteimg", function () {
 
 gulp.task("watch", function () {
 	//Следим за изменениями в файлах и директориях и запускаем задачи, если эти изменения произошли
-	gulp.watch("src/scss/**/*.scss", gulp.parallel("scss"));
-	gulp.watch("src/**/*.html", gulp.parallel("html"));
+	gulp.watch("src/scss/**/*.scss", gulp.parallel("scss", "makeDocs"));
+	gulp.watch("src/**/*.html", gulp.parallel("html", "makeDocs"));
 	gulp.watch(
 		"src/fonts/**/*.*",
-		gulp.parallel("font-woff", "font-woff2", "font-eot"),
+		gulp.parallel("font-woff", "font-woff2", "font-eot", "makeDocs"),
 	);
-	gulp.watch("src/js/**/*.js", gulp.parallel("minjs", "js"));
-	gulp.watch("src/images/**/*.*", gulp.parallel("images", "webp"));
+	gulp.watch("src/js/**/*.js", gulp.parallel("minjs", "js", "makeDocs"));
+	gulp.watch("src/images/**/*.*", gulp.parallel("images", "webp", "makeDocs"));
 });
 
 gulp.task("deploy", function () {
@@ -334,6 +337,15 @@ gulp.task("browser-sync", function () {
 });
 
 gulp.task(
+	"makeDocs",
+	function () {
+		return gulp
+			.src("build/**/*.*")
+			.pipe(gulp.dest("docs"))
+	}
+)
+
+gulp.task(
 	"default",
 	gulp.parallel(
 		"browser-sync",
@@ -347,5 +359,6 @@ gulp.task(
 		"font-eot",
 		"font-woff2",
 		"images",
+		"makeDocs"
 	),
 ); //запускает все перечисленные задачи разом

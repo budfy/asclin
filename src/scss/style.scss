@@ -14,16 +14,23 @@
 @import 'bem-blocks/icon-list';
 @import 'bem-blocks/menu';
 @import 'bem-blocks/white-btn';
+@import 'bem-blocks/blue-btn';
+@import 'bem-blocks/info-box';
+@import 'bem-blocks/account';
+@import 'bem-blocks/input-text';
+@import 'bem-blocks/checkbox';
 //!STYLES-SECTION: BEM-blocks
 
 //!STYLES-SECTION: global and BEM-blocks
 
 
 
-//STYLES-SECTION: sections
-@import 'component-styles/_header';
+//STYLES-SECTION: sections and components
+@import 'component-styles/header';
+@import 'component-styles/modal';
 @import 'component-styles/contact-form';
 @import 'component-styles/footer';
+@import 'component-styles/registration-and-settings';
 //!STYLES-SECTION: sections
 
 

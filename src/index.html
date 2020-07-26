@@ -8,9 +8,18 @@
 
   </main>
   @@include('components/_contact-form.html')
-  @@include('components/_popup-account.html')
-  @@include('components/_popup-reg.html')
-  @@include('components/_popup-settings.html')
+  <div class="modal">
+    <button class="modal__close">
+      Закрыть окно
+    </button>
+    <div class="modal__overlay"></div>
+    <div class="modal__box">
+      @@include('components/_modal-account.html')
+      @@include('components/_modal-reg.html')
+      @@include('components/_modal-settings.html')
+      @@include('components/_modal-error.html')
+    </div>
+  </div>
   @@include('components/_footer.html')
   @@include('components/_scripts.html')
 </body>

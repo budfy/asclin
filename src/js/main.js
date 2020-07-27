@@ -90,7 +90,6 @@ $(function () {
     mouseleave: function () {
       hint.hide();
       hintCount++;
-      console.log(hintCount);
       sessionStorage.setItem("hintCount", hintCount);
     }
   });

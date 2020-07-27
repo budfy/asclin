@@ -528,20 +528,22 @@
   <form class="modal__settings settings"
     action="#">
     <div class="settings__top-row flex">
-      <label class="settings__input-wrapper settings__input-wrapper--picture"
+
+      <label class="settings__input-wrapper settings__input-wrapper--picture flex"
         for="settings-user-photo">
         <input class="settings__user-photo"
           id="settings-user-photo"
           name="User photo"
           type="file"
           accept="image/*">
-        <span class="settings__picture-descr">
-          сменить офто
-        </span>
         <img class="settings__uploaded-photo"
           src="#"
           alt="Загруженное изображение">
+        <span class="settings__picture-descr">
+          сменить офто
+        </span>
       </label>
+
       <div class="settings__top-box">
         <label class="settings__input-wrapper"
           for="settings-username">
@@ -562,6 +564,7 @@
             required>
         </label>
       </div>
+
     </div>
 
     <div class="settings__input-row flex">
@@ -657,9 +660,9 @@
         type="button"
         data-title="Для добавления нажмите на кнопку, для удаления - нажмите правой кнопкой (долгим нажатием - для телефонов)">добавить
         должность</button>
-      <span class="settings__button-hint"
-        id="hint"></span>
+      <span class="settings__button-hint"></span>
     </div>
+
     <div class="settings__input-row flex">
       <label class="settings__input-wrapper"
         for="settings-comment">

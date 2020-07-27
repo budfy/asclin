@@ -4,7 +4,10 @@
   "description": "html/css/js website markup",
   "main": "gulpfile.js",
   "dependencies": {
+    "daterangepicker": "^3.1.0",
+    "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
+    "jquery-counter": "^1.0.2",
     "mkdir": "0.0.2",
     "normalize.css": "^8.0.1"
   },

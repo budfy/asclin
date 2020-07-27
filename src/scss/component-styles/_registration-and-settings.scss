@@ -39,6 +39,23 @@
   }
 }
 
-.settings{
-  
+.settings {
+  &__add-workplace {
+    user-select: none;
+  }
+
+  &__button-hint {
+    position: fixed;
+    padding: 5px;
+    margin: -15px auto auto 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, .3);
+    background-color: #fff;
+    z-index: 100500;
+    max-width: 250px;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

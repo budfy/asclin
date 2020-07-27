@@ -5,18 +5,42 @@
     профиль
   </p>
   <form class="modal__settings settings"
-    action>
-
-    <div class="settings__input-row flex">
-      <label class="settings__input-wrapper"
-        for="settings-username">
-        <input class="settings__input-text"
-          id="settings-username"
-          name="User Name"
-          type="text"
-          placeholder="Фамилия, Имя, Отчество"
-          required>
+    action="#">
+    <div class="settings__top-row flex">
+      <label class="settings__input-wrapper settings__input-wrapper--picture"
+        for="settings-user-photo">
+        <input class="settings__user-photo"
+          id="settings-user-photo"
+          name="User photo"
+          type="file"
+          accept="image/*">
+        <span class="settings__picture-descr">
+          сменить офто
+        </span>
+        <img class="settings__uploaded-photo"
+          src="#"
+          alt="Загруженное изображение">
       </label>
+      <div class="settings__top-box">
+        <label class="settings__input-wrapper"
+          for="settings-username">
+          <input class="settings__input-text"
+            id="settings-username"
+            name="User Name"
+            type="text"
+            placeholder="Фамилия, Имя, Отчество"
+            required>
+        </label>
+        <label for="settings-tel"
+          class="settings__input-wrapper">
+          <input class="settings__input-text"
+            id="settings-tel"
+            name="User phone"
+            type="tel"
+            placeholder="телефон"
+            required>
+        </label>
+      </div>
     </div>
 
     <div class="settings__input-row flex">
@@ -51,48 +75,70 @@
       </label>
     </div>
 
-    <div class="settings__input-row flex">
-      <label class="settings__input-wrapper settings__input-wrapper--2"
-        for="settings-main-spec">
-        <input class="settings__input-text"
-          id="settings-main-spec"
-          name="Main specialization"
-          type="text"
-          placeholder="Основная специальность"
-          required>
-      </label>
-      <label class="settings__input-wrapper settings__input-wrapper--2 settings__input-wrapper--sub-ph"
-        for="settings-add-spec">
-        <input class="settings__input-text"
-          id="settings-add-spec"
-          name="Additional specialization"
-          type="text"
-          placeholder="Дополнительная специальность">
-        <span class="settings__sub-ph">*при наличии</span>
-      </label>
-    </div>
+    <div class="settings__workplaces-wrapper">
+      <div class="settings__workplace">
+        <div class="settings__input-row flex">
+          <label class="settings__input-wrapper settings__input-wrapper--2"
+            for="settings-main-spec">
+            <input class="settings__input-text"
+              id="settings-main-spec"
+              name="Main specialization"
+              type="text"
+              placeholder="Основная специальность"
+              required>
+          </label>
+          <label class="settings__input-wrapper settings__input-wrapper--2 settings__input-wrapper--sub-ph"
+            for="settings-add-spec">
+            <input class="settings__input-text"
+              id="settings-add-spec"
+              name="Additional specialization"
+              type="text"
+              placeholder="Дополнительная специальность">
+            <span class="settings__sub-ph">*при наличии</span>
+          </label>
+        </div>
 
-    <div class="settings__input-row flex">
-      <label class="settings__input-wrapper settings__input-wrapper--2"
-        for="settings-workplace">
-        <input class="settings__input-text"
-          id="settings-workplace"
-          name="Work place"
-          type="text"
-          placeholder="Место работы"
-          required>
-      </label>
-      <label class="settings__input-wrapper settings__input-wrapper--2"
-        for="settings-work-pos">
-        <input class="settings__input-text"
-          id="settings-work-pos"
-          name="Work position"
-          type="text"
-          placeholder="Должность"
-          required>
-      </label>
-    </div>
+        <div class="settings__input-row flex">
 
+          <label class="settings__input-wrapper settings__input-wrapper--3"
+            for="settings-workplace">
+            <input class="settings__input-text"
+              id="settings-workplace"
+              name="Work place"
+              type="text"
+              placeholder="Место работы"
+              required>
+          </label>
+
+          <label class="settings__input-wrapper settings__input-wrapper--3"
+            for="settings-work-pos">
+            <input class="settings__input-text"
+              id="settings-work-pos"
+              name="Work position"
+              type="text"
+              placeholder="Должность"
+              required>
+          </label>
+
+          <label class="settings__input-wrapper settings__input-wrapper--3"
+            for="settings-work-date">
+            <input class="settings__input-text"
+              id="settings-work-date"
+              name="Work date"
+              type="text"
+              placeholder="Даты"
+              required>
+          </label>
+        </div>
+      </div>
+
+      <button class="settings__add-workplace"
+        type="button"
+        data-title="Для добавления нажмите на кнопку, для удаления - нажмите правой кнопкой (долгим нажатием - для телефонов)">добавить
+        должность</button>
+      <span class="settings__button-hint"
+        id="hint"></span>
+    </div>
     <div class="settings__input-row flex">
       <label class="settings__input-wrapper"
         for="settings-comment">
@@ -102,23 +148,6 @@
           placeholder="Комментарии"></textarea>
       </label>
     </div>
-
-    <div class="settings__input-row flex">
-      <label class="settings__checkbox"
-        for="settings-checkbox">
-        <input class="settings__checkbox-input"
-          id="settings-checkbox"
-          name="settings checkbox"
-          type="checkbox"
-          required>
-        <span class="settings__checkbox-descr">
-          я согласен на отправку персональных данных и принимаю
-          <a class="settings__checkbox-link"
-            href="#">условия обработки и хранения информации</a>
-        </span>
-      </label>
-    </div>
-
     <button class="settings__btn blue-btn"
       type="submit">отправить</button>
   </form>

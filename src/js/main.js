@@ -8,6 +8,7 @@ $(function () {
     $($modal).siblings().hide();
     $($modal).show();
     $("body *:not(.modal *)").attr("tabindex", -1); //NOTE - запрещает фокус элементов с клавиатуры, находящихся вне модального окна
+    hintCount = sessionStorage.getItem("hintCount");
   });
   // !ANCHOR
 
@@ -41,5 +42,71 @@ $(function () {
   });
   // !ANCHOR
 
+  //ANCHOR: функция показа фото при смене в настройках
+  $("#settings-user-photo").change(function () {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $(".settings__input-wrapper--picture>img").attr("src", e.target.result);
+      };
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
+  //!ANCHOR
 
+  //ANCHOR: функция добавления/удаления места работы по кнопке и сопотствующее
+  let workCount = 1,
+    hintCount = 0;
+  hint = $('.settings__button-hint'),
+    $(".settings__add-workplace").click(function () {
+      if (workCount <= 5) {
+        $(".settings__workplace:last-of-type").clone().insertBefore($(this))
+          .find($("input"))
+          .val("");
+        workCount++;
+        if (hintCount <= 1) {
+          hint.text($(this).data("title")).show(60);
+        }
+      }
+    });
+
+  $(".settings__add-workplace").on("contextmenu", function (e) {
+    if (workCount > 1) {
+      $(".settings__workplace:last-of-type")
+        .remove();
+      workCount--;
+      hintCount++;
+      sessionStorage.setItem("hintCount", hintCount);
+    }
+    return false;
+  });
+
+  $('.settings__add-workplace').on({
+    mouseenter: function () {
+      if (hintCount <= 1) {
+        hint.text($(this).data("title")).show(60);
+      }
+    },
+    mouseleave: function () {
+      hint.hide();
+      hintCount++;
+      console.log(hintCount);
+      sessionStorage.setItem("hintCount", hintCount);
+    }
+  });
+
+  hint.click(function () {
+    hintCount++;
+    sessionStorage.setItem("hintCount", hintCount);
+  });
+
+  //!ANCHOR
+
+  // ANCHOR: функция вызова плагина для выбора двойной даты
+
+  // !ANCHOR
+
+  // ANCHOR: маски форм
+
+  // !ANCHOR
 });

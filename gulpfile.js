@@ -99,7 +99,9 @@ gulp.task("style", function () {
 		.src([
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
+			"node_modules/daterangepicker/daterangepicker.css"
 		])
+		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
 		.pipe(cssmin()) //минифицируем полученный файл
 		.pipe(sourcemaps.write("sourcemaps/"))
@@ -112,10 +114,14 @@ gulp.task("script", function () {
 	return gulp
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
-			"node_modules/jquery/dist/jquery.js"
+			"node_modules/jquery/dist/jquery.js",
+			"node_modules/daterangepicker/moment.min.js",
+			"node_modules/jquery-counter/dist/jquery.counter.min.js",
+			"node_modules/inputmask/dist/jquery.inputmask.js",
+			"node_modules/daterangepicker/daterangepicker.js"
 		])
+		.pipe(sourcemaps.init())
 		.pipe(size())
-		.pipe(babel())
 		.pipe(concat("libs.min.js"))
 		.pipe(uglify())
 		.pipe(sourcemaps.write("sourcemaps/"))
@@ -152,6 +158,7 @@ gulp.task("html", function () {
 	//собираем html из кусочков
 	return gulp
 		.src(["src/**/*.html", "!src/components/**/*.html"])
+		.pipe(sourcemaps.init())
 		.pipe(
 			include({
 				//импортируем файлы с префиксом @@. ПРефикс можно настроить под себя.

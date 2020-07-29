@@ -18,9 +18,31 @@ $grey-bg: #ecedef;
 $grey-bg-2: #DCDDE1;
 
 @mixin bg {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+%divider {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 50vw;
+    background-image: url(../images/icons/line.svg);
+    @include bg;
+    top: -53px;
+    z-index: 3;
+  }
+}
+
+%h2 {
+  font-weight: bold;
+  font-size: 110px;
+  line-height: 134px;
+  text-transform: uppercase;
+  color: $grey;
+  position: relative;
 }
 
 @mixin fake-bg {

@@ -1,0 +1,14 @@
+.partners {
+  padding: 55px 0 90px;
+  margin-bottom: 150px;
+
+  &::before {
+    right: 50%;
+    top: 0;
+  }
+
+  &__item {
+    height: 75px;
+    object-fit: contain;
+  }
+}

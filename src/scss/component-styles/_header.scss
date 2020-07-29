@@ -1,5 +1,6 @@
 .header {
-  @include bg;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center top;
   background-image: linear-gradient(to top, rgba(19, 33, 59, 0.65), rgba(19, 33, 59, 0.65)),
     url(../images/header-bg.jpg);

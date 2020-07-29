@@ -52,7 +52,6 @@ label[class$=checkbox] {
       opacity: 0;
       background-image: url(../images/icons/check.svg);
       @include bg;
-      background-size: contain;
     }
   }
 

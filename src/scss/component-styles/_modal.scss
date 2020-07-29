@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  z-index: 2;
+  z-index: 10;
   overflow-y: auto;
   padding: 10vh 0;
   display: none;
@@ -19,7 +19,7 @@
     position: absolute;
     top: 5%;
     right: 5%;
-    z-index: 4;
+    z-index: 14;
 
     &::before,
     &::after {
@@ -84,7 +84,7 @@
     background-color: #ffffff;
     border-radius: 70px;
     padding: 180px 55px 60px 55px;
-    z-index: 3;
+    z-index: 13;
     overflow-y: auto;
   }
 

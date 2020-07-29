@@ -99,7 +99,8 @@ gulp.task("style", function () {
 		.src([
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
-			"node_modules/daterangepicker/daterangepicker.css"
+			"node_modules/air-datepicker/dist/css/datepicker.css",
+			"node_modules/swiper/swiper-bundle.css"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -115,10 +116,10 @@ gulp.task("script", function () {
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/jquery/dist/jquery.js",
-			"node_modules/daterangepicker/moment.min.js",
 			"node_modules/jquery-counter/dist/jquery.counter.min.js",
 			"node_modules/inputmask/dist/jquery.inputmask.js",
-			"node_modules/daterangepicker/daterangepicker.js"
+			"node_modules/air-datepicker/dist/js/datepicker.js",
+			"node_modules/swiper/swiper-bundle.js"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())

@@ -4,12 +4,14 @@
   "description": "html/css/js website markup",
   "main": "gulpfile.js",
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "daterangepicker": "^3.1.0",
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
     "jquery-counter": "^1.0.2",
     "mkdir": "0.0.2",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "swiper": "^6.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",

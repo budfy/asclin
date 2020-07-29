@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('components/_head.html')
+
+<body>
+  @@include('components/_header.html')
+  <main class="page-content">
+    <div class="container">
+      <h2 class="section-title">
+        Мероприятия
+        <span class="section-title__shadow">
+          Мероприятия
+        </span>
+      </h2>
+
+      <section class="future-event flex">
+        <div class="future-event__descr">
+          <p class="section-title future-event__title">
+            Скоро
+            <span class="section-title__shadow future-event__title-shadow">Скоро</span>
+          </p>
+          <time class="future-event__date"
+            datetime="2020-08-27">27.08</time>
+          <h3 class="future-event__subtitle">Название конференции</h3>
+          <p class="future-event__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные
+            тексты. Бросил безопасную сих мир, сбить себя переписывается большой вдали маленький страна грамматики,
+            вопрос силуэт заглавных путь моей lorem все? Наш коварный строчка встретил имени залетают если! Его
+            всемогущая предупреждал дороге парадигматическая заманивший, залетают пунктуация точках раз запятых вопрос
+            семантика живет?</p>
+          <a class="future-event__link read-more read-more--white"
+            href="#">Подробнее о конференции</a>
+        </div>
+        <img class="future-event__pic"
+          src="images/img-1.jpg"
+          alt="Картинка для конференции">
+      </section>
+
+      <section class="past-events past-events--divider-left past-ebents">
+        <h3 class="past-events__title">
+          Прошедшие
+        </h3>
+        <div class="past-events__inner past-events__inner--bg-right flex">
+          <article class="past-events__item">
+            <time class="past-events__item-date"
+              datetime="2019-09-28">28.09.2019</time>
+            <img class="past-events__item-picture"
+              src="images/profile-image.jpg"
+              alt="Фото конференции">
+            <h4 class="past-events__item-title">Название конференции</h4>
+            <p class="past-events__item-text">Далеко-далеко за словесными горами в стране гласных и согласных живут
+              рыбные тексты. Эта о свой там снова родного ее продолжил рукопись семантика вершину, повстречался
+              переписали! Всеми большого его, пунктуация жаренные дал, даль языком страну единственное семантика
+              маленький составитель власти ведущими реторический своего свой точках грустный.</p>
+            <a href="event-about.html"
+              class="past-events__item-link read-more">Подробнее о конференции</a>
+          </article>
+
+          <article class="past-events__item">
+            <time class="past-events__item-date"
+              datetime="2019-01-30">30.01.2019</time>
+            <img class="past-events__item-picture"
+              src="images/img-3.jpg"
+              alt="Фото конференции">
+            <h4 class="past-events__item-title">Название конференции</h4>
+            <p class="past-events__item-text">Далеко-далеко за словесными горами в стране гласных и согласных живут
+              рыбные тексты. Эта о свой там снова родного ее продолжил рукопись семантика вершину, повстречался
+              переписали! Всеми большого его, пунктуация жаренные дал, даль языком страну единственное семантика
+              маленький составитель власти ведущими реторический своего свой точках грустный.</p>
+            <a href="event-about.html"
+              class="past-events__item-link read-more">Подробнее о конференции</a>
+          </article>
+
+          <article class="past-events__item">
+            <time class="past-events__item-date"
+              datetime="2019-09-28">28.09.2019</time>
+            <img class="past-events__item-picture"
+              src="images/img-2.jpg"
+              alt="Фото конференции">
+            <h4 class="past-events__item-title">Название конференции</h4>
+            <p class="past-events__item-text">Далеко-далеко за словесными горами в стране гласных и согласных живут
+              рыбные тексты. Эта о свой там снова родного ее продолжил рукопись семантика вершину, повстречался
+              переписали! Всеми большого его, пунктуация жаренные дал, даль языком страну единственное семантика
+              маленький составитель власти ведущими реторический своего свой точках грустный.</p>
+            <a href="event-about.html"
+              class="past-events__item-link read-more">Подробнее о конференции</a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include('components/_contact-form.html')
+  <div class="modal">
+    <button class="modal__close">
+      Закрыть окно
+    </button>
+    <div class="modal__overlay"></div>
+    <div class="modal__box">
+      @@include('components/_modal-account.html')
+      @@include('components/_modal-reg.html')
+      @@include('components/_modal-settings.html')
+      @@include('components/_modal-error.html')
+    </div>
+  </div>
+  @@include('components/_footer.html')
+  @@include('components/_scripts.html')
+</body>
+
+</html>

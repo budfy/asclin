@@ -71,7 +71,6 @@
       left: -35px;
       transform: translateY(-50%);
       @include bg;
-      background-size: contain;
     }
 
     &--email::before {

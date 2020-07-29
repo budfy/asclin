@@ -1,0 +1,38 @@
+.event-about {}
+
+.event-result {
+  margin-top: 160px;
+  margin-bottom: 107px;
+
+  &__content-item {
+    &--cities {
+      &::before {
+        background-image: url(../images/icons/footer-pointer.svg);
+      }
+
+      &::after {
+        content: "городов";
+      }
+    }
+
+    &--people {
+      &::before {
+        background-image: url(../images/icons/people.svg);
+      }
+
+      &::after {
+        content: "участников";
+      }
+    }
+
+    &--reports {
+      &::before {
+        background-image: url(../images/icons/brain.svg);
+      }
+
+      &::after {
+        content: "докладов";
+      }
+    }
+  }
+}

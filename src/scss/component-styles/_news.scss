@@ -1,0 +1,9 @@
+.news {
+  margin-bottom: 116px;
+
+  &__item {
+    &+& {
+      margin-top: 97px;
+    }
+  }
+}

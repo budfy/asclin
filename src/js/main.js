@@ -1,3 +1,21 @@
+//ANCHOR: инициалитзация слайдера
+let partners = new Swiper(".swiper-container", {
+  loop: true,
+  pagination: false,
+  navigation: false,
+  scrollbar: false,
+  slidesPerView: 1,
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 4
+    },
+  }
+})
+//!ANCHOR
+
 $(function () {
   // ANCHOR: функция для открытия модального окна
   // NOTE: весь контент модальных окон открывается в одном окне(блоке). Для вызова модального окна вызывающий элемент должен иметь класс js-modal-call и дата-атрибут data-modal со значением, равным ID обёртки вызываемого контента. Вызываемый контент оборачивается обёрткой с классом modal__content-wrapper. В случае, если заданного ID нет, внутри модального окна появится сообщение об ошибке.
@@ -16,7 +34,7 @@ $(function () {
   $(".modal__overlay, .modal__close").click(function () {
     $("body").removeClass("no-scroll");
     $(".modal").fadeOut(260);
-    $(".modal__content-wrapper").fadeOut(300);
+    $(".modal .modal__content-wrapper").fadeOut(300);
     setTimeout(() => {
       $("#modal-error").show();
     }, 350);
@@ -102,10 +120,34 @@ $(function () {
   //!ANCHOR
 
   // ANCHOR: функция вызова плагина для выбора двойной даты
+  // $("#settings-work-date").daterangepicker({
+  //   opens: "left",
+  //   drops: "up",
+
+  //   locale: "ru",
+  //   autoApply: true,
+  //   showDropdowns: true
+  // })
+
+  $("#settings-work-date").datepicker({
+    maxDate: new Date(),
+    dateFormat: "dd.mm.yyyy", //NOTE: можно включить полное отображение даты: 29 февраля 2020, задав значение dd MM yyyy но оно не всегда помещается в поле ввода целиком.
+    position: "top left",
+    view: "years",
+    range: true,
+    clearButton: true,
+    todayButton: new Date(),
+    multipleDatesSeparator: " - ",
+    autoClose: true,
+    language: {
+      months: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+    }
+  });
 
   // !ANCHOR
 
   // ANCHOR: маски форм
 
   // !ANCHOR
+
 });

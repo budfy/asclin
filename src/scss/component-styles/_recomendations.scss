@@ -1,0 +1,74 @@
+.recomendations {
+  &__descr::before {
+    height: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 325px);
+    grid-row-gap: 84px;
+    grid-column-gap: 43px;
+    background: #ECEDEF;
+    border-radius: 70px;
+    padding: 61px 42px;
+    margin-top: 138px;
+    margin-bottom: 103px;
+    background-image: url(../images/recomend-bg.svg);
+    background-position: -1% 95%;
+    background-repeat: no-repeat;
+  }
+
+  &__link {
+    font-size: 80px;
+    line-height: 98px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main;
+    background-color: #DCDDE1;
+    border-radius: 50px;
+    height: 227px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.26s;
+
+    &--small-text {
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    &--left {
+      grid-column: 1;
+    }
+
+    &--center {
+      grid-column: 2;
+    }
+
+    &--right {
+      grid-column: 3;
+    }
+
+    &:hover {
+      transform: translateY(-1%) scale(1.05);
+
+      .recomendations__link-subtext {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__link-title {
+    display: block;
+  }
+
+  &__link-subtext {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 15px;
+    display: block;
+    transition: all 0.26s;
+  }
+}

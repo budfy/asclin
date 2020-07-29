@@ -70,6 +70,16 @@ $(function () {
       reader.readAsDataURL(this.files[0]);
     }
   });
+
+  $("#new-article-pic").change(function () {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $(".new-article__image").attr("src", e.target.result);
+      };
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
   //!ANCHOR
 
   //ANCHOR: функция добавления/удаления места работы по кнопке и сопотствующее
@@ -149,5 +159,15 @@ $(function () {
   // ANCHOR: маски форм
 
   // !ANCHOR
+
+  //ANCHOR: функция для скрытия формы добавления картинки, пока в фокусе поле для ввода текста
+  $(".new-article__content").on("focus", function () {
+    $(".new-article__input-wrapper--image").addClass("go-back");
+  });
+
+  $(".new-article__content").on("focusout", function () {
+    $(".new-article__input-wrapper--image").removeClass("go-back");
+  });
+  //!ANCHOR
 
 });

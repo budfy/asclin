@@ -127,3 +127,29 @@ h3,
   right: 20%;
   border-radius: 0px 60px 60px 0px;
 }
+
+.section--bg {
+  position: relative;
+  padding: 71px 88px 150px;
+  background: #ECEDEF;
+  border-radius: 70px;
+
+  &::before {
+    @include fake-bg;
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 95px;
+    right: 17px;
+    width: 50%;
+    max-width: 470px;
+    height: 50%;
+    max-height: 550px;
+    z-index: 0;
+  }
+
+  &>* {
+    position: relative;
+    z-index: 1;
+  }
+}

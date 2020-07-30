@@ -6,8 +6,11 @@ let partners = new Swiper(".swiper-container", {
   scrollbar: false,
   slidesPerView: 1,
   breakpoints: {
-    768: {
+    565: {
       slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
     },
     1024: {
       slidesPerView: 4
@@ -157,7 +160,39 @@ $(function () {
   // !ANCHOR
 
   // ANCHOR: маски форм
+  $("#registration-username, #settings-username").inputmask({
+    mask: "*{3,30} *{3,30} *{3,30}",
+    greedy: true,
+    validator: "[0-9A-Za-z!]",
+    onincomplete: function () {
+      $(this).parent().addClass("invalid");
+      setTimeout(() => {
+        $(this).parent().removeClass("invalid");
+      }, 3000);
+    },
+  });
 
+  $("input[type='tel']").inputmask({
+    mask: "+7" + " " + "(" + "999" + ")" + " " + "999" + "-" + "99" + "-" + "99",
+    greedy: true,
+    validator: "[0-9]",
+  });
+
+  $("#contact-form-email, #settings-email, #registration-email").inputmask({
+    alias: "email",
+    definitions: {
+      "*": {
+        validator: "[0-9A-Za-z!_-]",
+        cardinality: 1,
+        casing: "lower",
+      },
+    },
+  });
+
+  $("#settings-insta, #settings-fb").inputmask({
+    mask: "https://" + "*{1,30}",
+    greedy: false
+  });
   // !ANCHOR
 
   //ANCHOR: функция для скрытия формы добавления картинки, пока в фокусе поле для ввода текста
@@ -169,5 +204,23 @@ $(function () {
     $(".new-article__input-wrapper--image").removeClass("go-back");
   });
   //!ANCHOR
+
+  //ANCHOR: функция для бургерного меню
+  $(".header__burger").click(function () {
+    $(".header__burger-row").toggleClass("header__burger-row--open")
+    $(".header__menu").slideToggle(260)
+  })
+
+  $(document).mouseup(function (e) {
+    let $targ = $(".header__menu, .header__burger");
+    if (
+      !$targ.is(e.target) &&
+      $targ.has(e.target).length === 0
+    ) {
+      $(".header__menu").slideUp(260)
+      $(".header__burger-row").removeClass("header__burger-row--open")
+    }
+  });
+  //!!ANCHOR
 
 });

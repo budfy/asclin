@@ -7,5 +7,11 @@
 
   &__link {
     display: block;
+    height: 100%;
+  }
+
+  &__img{
+    height: 100%;
+    object-fit: contain;
   }
 }

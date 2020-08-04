@@ -7,6 +7,10 @@
     top: 0;
   }
 
+  &__inner {
+    margin-top: 40px;
+  }
+
   &__item {
     height: 75px;
     object-fit: contain;

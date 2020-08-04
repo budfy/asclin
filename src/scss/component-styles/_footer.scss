@@ -10,9 +10,10 @@
   &__icon-list {
     margin: 0;
     padding: 0;
-
+    justify-content: flex-start;
     .icon-list__item {
       height: 38px;
+      width: 53px;
 
       &+.icon-list__item {
         margin-left: 62px;
@@ -25,6 +26,8 @@
       width: 100%;
       fill: #1c1e3b;
       transition: all 0.26s;
+      object-fit: contain;
+      margin-right: auto;
     }
 
     .icon-list__link {

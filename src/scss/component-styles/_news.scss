@@ -2,13 +2,15 @@
   margin-bottom: 116px;
 
   &__item {
+    margin-top: 64px;
+
     &+& {
       margin-top: 97px;
     }
-  }
 
-  .content-item::before {
-    top: 20%;
-    height: 110%;
+    &::before {
+      top: 85px;
+      height: 110%;
+    }
   }
 }

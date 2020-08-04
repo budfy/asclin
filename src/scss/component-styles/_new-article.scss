@@ -7,6 +7,7 @@
     font-size: 30px;
     line-height: 37px;
     color: $main;
+    margin-top: 112px;
   }
 
   &__inner {
@@ -29,6 +30,7 @@
       flex: 0 0 412px;
       cursor: pointer;
       transition: all 0.26s;
+      max-width: 100%;
 
       &.go-back {
         opacity: 0.3;
@@ -68,6 +70,7 @@
     z-index: 1;
     top: 0;
     position: relative;
+    background-color: $main;
 
     &::before {
       content: '';
@@ -106,6 +109,6 @@
 
   &__divider::after {
     top: auto;
-    bottom: -70px;
+    bottom: -100px;
   }
 }

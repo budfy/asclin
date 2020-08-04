@@ -2,26 +2,18 @@
 .settings {
   display: block;
 
-  &__input-row {
-    &+& {
-      margin-top: 20px;
-    }
-  }
-
   &__input-wrapper {
     flex: 1 1 100%;
     display: block;
+    margin-top: 20px;
 
-    &+& {
-      margin-left: 20px;
-    }
 
     &--2 {
-      flex: 1 1 calc(100%/2 - 20px);
+      flex: 0 1 calc(100%/2 - 10px);
     }
 
     &--3 {
-      flex: 1 1 calc(100%/3 - 40px);
+      flex: 0 1 calc(100%/3 - 10px);
     }
   }
 
@@ -121,10 +113,9 @@
     margin-left: 55px;
   }
 
-  &__workplaces-wrapper,
-  &__workplace,
-  &__input-row {
-    margin-top: 20px;
+  &__workplace-wrapper,
+  &__workplace {
+    margin-top: 32px;
   }
 
   &__add-workplace {

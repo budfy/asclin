@@ -46,7 +46,7 @@ $(function () {
   // !ANCHOR
 
   // ANCHOR: функция аккордеона
-  $(".js-info-open").on("click, focus", function () {
+  $(".js-info-open").on("click focus", function () {
     $(this).addClass("info-box__title--open")
     $(this).parent().siblings().find(".info-box__content").slideUp(260);
     $(this).parent().siblings().find(".info-box__title").removeClass("info-box__title--open")
@@ -132,15 +132,34 @@ $(function () {
 
   //!ANCHOR
 
-  // ANCHOR: функция вызова плагина для выбора двойной даты
-  // $("#settings-work-date").daterangepicker({
-  //   opens: "left",
-  //   drops: "up",
+  // ANCHOR: функция вызова плагина для выбора одинарной даты
 
-  //   locale: "ru",
-  //   autoApply: true,
-  //   showDropdowns: true
-  // })
+  $("[type='date']").datepicker({
+    maxDate: new Date(),
+    dateFormat: "dd.mm.yyyy", //NOTE: можно включить полное отображение даты: 29 февраля 2020, задав значение dd MM yyyy но оно не всегда помещается в поле ввода целиком.
+    position: "top left",
+    view: "years",
+    range: false,
+    clearButton: true,
+    todayButton: new Date(),
+    autoClose: true,
+    language: {
+      months: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+    }
+  });
+
+  $(window).on("load", function () {
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      $("[type='date']")
+        .datepicker()
+        .data("datepicker")
+        .destroy();
+    }
+  });
+
+  // !ANCHOR
+
+  // ANCHOR: функция вызова плагина для выбора двойной даты
 
   $("#settings-work-date").datepicker({
     maxDate: new Date(),
@@ -209,18 +228,30 @@ $(function () {
   $(".header__burger").click(function () {
     $(".header__burger-row").toggleClass("header__burger-row--open")
     $(".header__menu").slideToggle(260)
-  })
+  });
 
   $(document).mouseup(function (e) {
-    let $targ = $(".header__menu, .header__burger");
+    let $targ = $(".header__menu, .header__burger"),
+      maxWidth = window.matchMedia("(max-width: 1023px)").matches;
     if (
       !$targ.is(e.target) &&
-      $targ.has(e.target).length === 0
+      $targ.has(e.target).length === 0 &&
+      maxWidth
     ) {
       $(".header__menu").slideUp(260)
       $(".header__burger-row").removeClass("header__burger-row--open")
     }
   });
   //!!ANCHOR
+
+  //ANCHOR: замена заполняющего текста для инпута при разрешении экрана меньше 699px
+  $(window).on("load resize orientationchange", function () {
+    if (window.matchMedia("(max-width: 699px)").matches) {
+      $("#registration-add-spec, #settings-add-spec").attr("placeholder", "Доп. специальность");
+    } else {
+      $("#registration-add-spec, #settings-add-spec").attr("placeholder", "Дополнительная специальность");
+    }
+  })
+  //!ANCHOR
 
 });

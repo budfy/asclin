@@ -1,6 +1,10 @@
 .articles {
   margin-bottom: 126px;
 
+  &__title {
+    margin-bottom: 21px;
+  }
+
   &__add {
     font-style: italic;
     font-weight: 600;

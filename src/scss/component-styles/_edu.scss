@@ -2,8 +2,12 @@
   margin-bottom: 140px;
 
   &::after {
-    bottom: -80px;
+    bottom: -90px;
     top: auto;
+  }
+
+  &__descr {
+    margin-top: 60px;
   }
 
   &__items {
@@ -24,6 +28,10 @@
       background: #ECEDEF;
       border-radius: 70px;
       z-index: 0;
+    }
+
+    &::after {
+      top: -90px;
     }
   }
 

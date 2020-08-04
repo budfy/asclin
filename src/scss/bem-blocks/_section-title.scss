@@ -2,6 +2,7 @@
   @extend %h2;
   position: relative;
   user-select: none;
+  margin-bottom: 12px;
 
   &__shadow {
     position: absolute;
@@ -18,7 +19,7 @@
 
   &::after {
     top: auto;
-    bottom: -30px;
+    bottom: -40px;
     left: 50%;
   }
 }

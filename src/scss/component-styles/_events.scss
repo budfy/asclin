@@ -60,6 +60,10 @@
 .past-events {
   margin: 207px 0;
 
+  &::after {
+    top: -84px;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 60px;

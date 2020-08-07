@@ -1,18 +1,31 @@
 .partners {
-  padding: 55px 0 90px;
-  margin-bottom: 150px;
+	padding: 55px 0 90px;
+	margin-bottom: 150px;
 
-  &::before {
-    right: 50%;
-    top: 0;
-  }
+	&::before {
+		right: 50%;
+		top: 0;
+	}
 
-  &__inner {
-    margin-top: 40px;
-  }
+	&__inner {
+		margin-top: 40px;
+	}
 
-  &__item {
-    height: 75px;
-    object-fit: contain;
-  }
+	&__item {
+		height: 75px;
+		object-fit: contain;
+	}
+}
+
+.ie-active .partners__inner .swiper-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-left: -32px;
+
+	.swiper-slide {
+		flex: 0 0 auto;
+		margin: 32px 0 0 32px;
+		width: auto;
+	}
 }

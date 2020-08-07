@@ -722,6 +722,10 @@
 		&__name {
 			margin: 0;
 		}
+
+		&:first-of-type {
+			margin-top: 0;
+		}
 	}
 
 	.account__user-forum {
@@ -735,6 +739,7 @@
 	.modal__content-wrapper {
 		border-radius: 35px;
 		margin-top: 10px;
+		padding-bottom: 80px;
 
 		&--reg {
 			padding-top: 60px;
@@ -777,6 +782,18 @@
 	[class*=--fake-ph] span[class*=__fake-ph] {
 		word-wrap: break-word;
 		font-size: 12px;
+	}
+
+	.past-events {
+		margin-top: 60px;
+
+		&::after {
+			top: -40px;
+		}
+
+		&__title {
+			margin: 0;
+		}
 	}
 
 	.event-result {
